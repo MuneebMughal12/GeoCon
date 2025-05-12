@@ -220,38 +220,70 @@ export default function Navbar() {
 
             {/* Sidebar Drawer */}
             <div className={`fixed inset-0 z-40 flex ${isOpen ? "" : "pointer-events-none"}`}>
-
+                {/* backdrop */}
                 <div
                     className={`absolute inset-0 bg-black transition-opacity ${isOpen ? "opacity-50" : "opacity-0"
                         }`}
                     onClick={() => setIsOpen(false)}
                 />
+
+                {/* drawer panel */}
                 <div
                     className={`
-            relative ml-auto w-80 max-w-full h-full
-            bg-[#32213C] text-white p-6
-            transform transition-transform duration-300
-            ${isOpen ? "translate-x-0" : "translate-x-full"}
-          `}
+      relative ml-auto w-64 h-full bg-[#32213C] p-6
+      transform transition-transform duration-300
+      ${isOpen ? "translate-x-0" : "translate-x-full"}
+    `}
                 >
-                    <h2 className="text-xl font-bold mb-4">REQUEST A CALL BACK</h2>
-                    <p className="text-gray-300 mb-6">
-                        If you have any requirements for 3D design &amp; 3D rendering service… our team is there to guide you 24/7.
-                    </p>
-                    <form className="flex flex-col space-y-4">
-                        <input type="text" placeholder="Full Name" className="bg-white text-gray-800 p-3 rounded" />
-                        <input type="tel" placeholder="Contact Number" className="bg-white text-gray-800 p-3 rounded" />
-                        <input type="email" placeholder="Email Address" className="bg-white text-gray-800 p-3 rounded" />
-                        <textarea placeholder="Your Message" className="bg-white text-gray-800 p-3 rounded h-24" />
-                        <button type="submit" className="bg-[#d0a688] hover:bg-[#b38b72] text-white py-2 rounded mt-2">
-                            SEND MESSAGE
-                        </button>
-                    </form>
-                    <div className="flex items-center justify-center space-x-3 mt-8">
-                        {[FaTwitter, FaFacebookF, FaLinkedinIn, FaYoutube, FaInstagram].map((Icon, i) => (
-                            <Icon key={i} className="cursor-pointer" />
+                    {/* close button */}
+                    <button
+                        onClick={() => setIsOpen(false)}
+                        className="absolute top-4 right-4 text-white text-2xl"
+                    >
+                        &times;
+                    </button>
+
+                    {/* mobile nav links */}
+                    <nav className="mt-12 space-y-6">
+                        {[...leftNav, ...rightNav].map((item) => (
+                            <div key={item.name}>
+                                {/* top‐level link */}
+                                <Link
+                                    to={item.path}
+                                    onClick={() => setIsOpen(false)}
+                                    className="block text-xl font-medium text-[#d0a688] hover:underline"
+                                >
+                                    {item.name}
+                                </Link>
+
+                                {/* optional sub‐links */}
+                                {item.dropdown && (
+                                    <div className="ml-4 mt-2 space-y-2">
+                                        {item.dropdown.map((sub, i) => {
+                                            const label = typeof sub === "string" ? sub : sub.name;
+                                            const to =
+                                                typeof sub === "string"
+                                                    ? `${item.path}/${label
+                                                        .toLowerCase()
+                                                        .replace(/ & | /g, "-")}`
+                                                    : sub.path;
+
+                                            return (
+                                                <Link
+                                                    key={i}
+                                                    to={to}
+                                                    onClick={() => setIsOpen(false)}
+                                                    className="block text-white text-base hover:text-[#d0a688]"
+                                                >
+                                                    {label}
+                                                </Link>
+                                            );
+                                        })}
+                                    </div>
+                                )}
+                            </div>
                         ))}
-                    </div>
+                    </nav>
                 </div>
             </div>
         </>

@@ -6,8 +6,8 @@ export default function FeaturedProject() {
   const slide = {
     title:    "The Court Skyscraper",
     button:   "EXPLORE PROJECT",
-    thumb:    "/heroimg/slider1.jpg",                   // your thumbnail
-    videoUrl: "https://www.youtube.com/embed/dwtyeZi1328", // raw Youtube URL
+    thumb:    "/heroimg/slider1.jpg",                   
+    videoUrl: "https://www.youtube.com/embed/dwtyeZi1328", 
   }
 
   const [playing, setPlaying] = useState(false)
