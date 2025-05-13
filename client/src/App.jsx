@@ -9,6 +9,8 @@ import Servicess from "./Pages/Servicess";
 import ThreeDWalkthrough  from "./Pages/ThreeDWalkthrough";
 import Visual  from "./Pages/Visual";
 import Live from "./Pages/Live";
+import Digital from "./Pages/Digital";
+import Web from "./Pages/Web";
 
 function App() {
   return (
@@ -22,7 +24,9 @@ function App() {
         <Route path="/services" element={<Servicess />} />
         <Route path="/Services/3d-Walkthrough" element={<ThreeDWalkthrough />} />
         <Route path="/services/live-presenter" element={<Live />} />
-        <Route path="/services/visual-design/" element={<Visual />} />
+        <Route path="/services/visual-design" element={<Visual />} />
+        <Route path="/services/digital-compositing" element={<Digital />} />
+        <Route path="/services/web-design" element={<Web />} />
         
       
       </Routes>
