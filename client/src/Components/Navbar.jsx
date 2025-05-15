@@ -48,18 +48,18 @@ export default function Navbar() {
             name: "Services",
             path: "/services",
             dropdown: [
-                "2D & 3D Floor Plans",
-                "3D Virtual Walkthroughs",
-                "Augmented Reality",
-                "Photorealistic 3D Views",
-                "Visual Design",
-                "Virtual Reality",
-                "Advertising Solutions",
-                "Digital Composition",
-                "Live Presenter",
-                "Pix Touch",
-                "Print Media Design",
-                "Web Development",
+                { name: "2D & 3D Floor Plans", path: "/services/floor-plans" },
+                { name: "3D Virtual Walkthroughs", path: "/services/virtual-walkthroughs" },
+                { name: "Augmented Reality", path: "/services/augmented-reality" },
+                { name: "Photorealistic 3D Views", path: "/services/3d-views" },
+                { name: "Visual Design", path: "/services/visual-design" },
+                { name: "Virtual Reality", path: "/services/virtual-reality" },
+                { name: "Advertising Solutions", path: "/services/advertising" },
+                { name: "Digital Composition", path: "/services/digital-composition" },
+                { name: "Live Presenter", path: "/services/live-presenter" },
+                { name: "Pix Touch", path: "/services/pix-touch" },
+                { name: "Print Media Design", path: "/services/print-media" },
+                { name: "Web Development", path: "/services/web-development" },
             ],
         },
     ];
@@ -67,7 +67,6 @@ export default function Navbar() {
     const rightNav = [
         {
             name: "Portfolio",
-            path: "/portfolio",
             dropdown: [
                 { name: "Projects", path: "/portfolio/projects" },
                 { name: "Gallery", path: "/portfolio/gallery" },
@@ -137,14 +136,22 @@ export default function Navbar() {
                                             </button>
 
                                             {servicesOpen && (
-                                                <ul className="absolute left-0 top-full mt-2 w-64 bg-[#33213c] text-[#d0a688] rounded-md shadow-lg z-50">
-                                                    {item.dropdown.map((text, i) => (
-                                                        <li key={i} className="px-4 py-2 hover:bg-[#2a203c] text-base">
-                                                            {text}
+                                                <ul className="absolute left-0 top-full mt-2 w-48 bg-[#33213c] text-[#d0a688] rounded shadow-lg z-50">
+                                                    {item.dropdown.map((svc) => (
+                                                        <li
+                                                            key={svc.path}
+                                                            onClick={() => {
+                                                                navigate(svc.path);
+                                                                setServicesOpen(false);
+                                                            }}
+                                                            className="px-4 py-2  hover:bg-[#2a203c] text-base cursor-pointer"
+                                                        >
+                                                            {svc.name}
                                                         </li>
                                                     ))}
                                                 </ul>
                                             )}
+
                                         </>
                                     )}
                                 </li>
@@ -257,7 +264,7 @@ export default function Navbar() {
                                 </Link>
 
                                 {/* optional sub‐links */}
-                                {item.dropdown && (
+                                {/* {item.dropdown && (
                                     <div className="ml-4 mt-2 space-y-2">
                                         {item.dropdown.map((sub, i) => {
                                             const label = typeof sub === "string" ? sub : sub.name;
@@ -280,7 +287,22 @@ export default function Navbar() {
                                             );
                                         })}
                                     </div>
+                                )} */}
+                                {item.dropdown && (
+                                    <div className="ml-4 mt-2 …">
+                                        {item.dropdown.map((sub) => (
+                                            <Link
+                                                key={sub.path}
+                                                to={sub.path}
+                                                onClick={() => setIsOpen(false)}
+                                                className="block text-white text-base hover:text-[#d0a688]"
+                                            >
+                                                {sub.name}
+                                            </Link>
+                                        ))}
+                                    </div>
                                 )}
+
                             </div>
                         ))}
                     </nav>

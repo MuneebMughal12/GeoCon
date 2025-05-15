@@ -37,7 +37,7 @@ export default function Visualdesign() {
                 {/* 3. Your centered content */}
                 <div className="relative flex items-center justify-center h-full text-center">
                     <h1 className="text-3xl md:text-4xl font-bold text-white">
-                        Professional Digital Compositing Services Company
+                        Web Design & Web Development Company
                     </h1>
                 </div>
             </div>
@@ -51,16 +51,19 @@ export default function Visualdesign() {
                     {/* Left Side Title */}
                     <div className="text-white font-extrabold text-[50px] md:text-[70px] leading-tight">
                         <p>
-                            DIGI <span className=" text-white">TALLY</span>
+                            PO <span className=" text-white">BRAND</span>
                         </p>
-                        <p>TALLY IDENTITY</p>
+                        <p>WER PRODECTION </p>
                     </div>
 
                     {/* Right Side Paragraph */}
                     <div className="flex gap-6 items-start">
                         <div className="w-1 h-full bg-[#d0a688]"></div>
                         <p className="text-lg leading-relaxed">
-                            Digital Compositing is being used in Architectural Visualization to create world that are more realistic than ever. It might be a residential building or commercial, there is always a need that something is needed to be added or removed from the visualization that changes the whole aspect of how something is. In essence, Digital Composition helps in adding elements to a visualization that are not there, or removing something that you don’t want to be there.
+                            Pixarch has a full-service real estate web design & development team that offers customize web design 
+                            to meet your needs. We create websites using the latest
+                            development tools and modules so that the user experience you
+                            are able to provide your customers will become extraordinary & memorable.
                         </p>
                     </div>
                 </div>
@@ -68,7 +71,7 @@ export default function Visualdesign() {
                 {/* Benefits Heading */}
                 <div className="text-center mb-16">
                     <h3 className="text-3xl md:text-4xl font-extrabold uppercase text-white">
-                    BENEFITS OF DIGITAL COMPOSITING SERVICES
+                    BENEFITS OF WEB DESIGN & WEB DEVELOPMENT
                     </h3>
                     <div className="w-40 md:w-72 h-1 bg-[#d0a688] mx-auto mt-4"></div>
                 </div>
@@ -77,16 +80,16 @@ export default function Visualdesign() {
                 <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto text-center">
                     {[
                         {
-                            title: "VALUE ADDITION",
-                            desc: "Your project elements are superbly managed to portray a heightened screen sense. We might be adding more trees to the environment, more furniture in an interior video or even moving cars and people to make the visualization extremely realistic.",
+                            title: "INCREASED TRAFFIC",
+                            desc: "Our Custom Web Design guarantees that your brand reaches a respectable position in various search engines and also captivates your audience in an experience.",
                         },
                         {
-                            title: "QUALITY ENRICHMENT",
-                            desc: "Pixarch ensure to offers max output when it comes to your project, these incredible technology hacks are provided by us to catapult your company promotions at an unbelievable cost.",
+                            title: "UNRIVALLED MARKET POSITION",
+                            desc: "Pixarch promises to create a website that captures user loyalty, traffic and showcase your vision to every single visitor. Pixarch guarantee that our focus is always on perfection what would work best for you in your industry. We try to understand the uniqueness of your project to achieve a greater milestone digitally.",
                         },
                         {
-                            title: "COST EFFECTIVE",
-                            desc: "The Compositors at Pixarch make it their duty that every project handed to them comes out in the perfect form. The vibrant imagery enhances the quality of your products or services offered along with the spruced-up embellishments.",
+                            title: "CONVENIENT & COST EFFECTIVE",
+                            desc: "Our prominent web interface is a great pull for generating leads and developing brand awareness. It piques your customers’ interests to go further for the ultimate purchases.",
                         },
                     ].map((item, index) => (
                         <div
@@ -101,7 +104,7 @@ export default function Visualdesign() {
                     ))}
                 </div>
             </div>
-    
+
 
 
 

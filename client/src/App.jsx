@@ -11,6 +11,7 @@ import Visual  from "./Pages/Visual";
 import Live from "./Pages/Live";
 import Digital from "./Pages/Digital";
 import Web from "./Pages/Web";
+import Potfoli from "./Pages/Potfoli";
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
         <Route path="/services/visual-design" element={<Visual />} />
         <Route path="/services/digital-compositing" element={<Digital />} />
         <Route path="/services/web-design" element={<Web />} />
+        <Route path='/portfolio/projects' element={<Potfoli />} />
+        
         
       
       </Routes>
