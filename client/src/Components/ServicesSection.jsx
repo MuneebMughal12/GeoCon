@@ -131,14 +131,14 @@ import {
   
             <div className="text-center">
               <button
-                onClick={() => navigate("/projects")}
+                onClick={() => navigate("/portfolio/projects")}
                 className="inline-flex items-center space-x-2 px-6 py-2 border border-[#d0a688] text-[#d0a688] font-medium rounded hover:bg-[#d0a688] hover:text-white transition-colors duration-200"
               >
                 <span>View More Projects</span>
                 <FaArrowRight />
               </button>
             </div>
-          </div>
+          </div>ee
         </section>
       </>
     )
